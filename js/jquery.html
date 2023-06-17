@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+<h2>Storing data to local storage</h2>
+
+<h4>Reading data from local storage</h4>
+<p id="demo"></p>
+
+<script>
+  localStorage.setItem("data", "he localStorage object stores data with no expiration date.The data is not deleted when the browser is closed, and are available for future sessions.");
+  localStorage.setItem("login-password", "what'sup");
+  localStorage.setItem("login-email", "admin@admin.com");
+  if(localStorage.data){
+    document.getElementById("demo").innerHTML = localStorage.data;
+  }
+  
+  var timeout = setTimeout(clearData, 3000);
+
+  function clearData(){
+    localStorage.clear();
+  }
+</script>
+
+</body>
+</html>
